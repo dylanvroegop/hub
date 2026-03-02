@@ -57,13 +57,36 @@ export default function LoginPage() {
 
   return (
     <main style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', padding: 24 }}>
-      <section className="card" style={{ width: 'min(460px, 100%)' }}>
-        <h1 style={{ marginTop: 0 }}>Calvora Ops Login</h1>
-        <p className="muted">Interne toegang met Firebase account + allowlist.</p>
+      <section className="card card-glow" style={{ width: 'min(440px, 100%)', padding: 32 }}>
+        <div style={{ textAlign: 'center', marginBottom: 28 }}>
+          <div
+            style={{
+              width: 56,
+              height: 56,
+              borderRadius: 16,
+              background: 'linear-gradient(135deg, #00e59b, #38bdf8)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontWeight: 900,
+              fontSize: 24,
+              color: '#000',
+              marginBottom: 16,
+            }}
+          >
+            C
+          </div>
+          <h1 style={{ margin: 0, fontSize: 22, fontWeight: 800, letterSpacing: '-0.02em' }}>
+            Welkom terug
+          </h1>
+          <p className="muted" style={{ marginTop: 6 }}>Log in op je Calvora Ops Hub</p>
+        </div>
 
         <form onSubmit={onSubmit}>
-          <div style={{ marginBottom: 10 }}>
-            <label>E-mail</label>
+          <div style={{ marginBottom: 14 }}>
+            <label style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-muted)', marginBottom: 6, display: 'block' }}>
+              E-mail
+            </label>
             <input
               type="email"
               autoComplete="email"
@@ -74,8 +97,10 @@ export default function LoginPage() {
             />
           </div>
 
-          <div style={{ marginBottom: 10 }}>
-            <label>Wachtwoord</label>
+          <div style={{ marginBottom: 14 }}>
+            <label style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-muted)', marginBottom: 6, display: 'block' }}>
+              Wachtwoord
+            </label>
             <input
               type="password"
               autoComplete="current-password"
@@ -87,7 +112,7 @@ export default function LoginPage() {
 
           {error ? <p className="error">{error}</p> : null}
 
-          <button type="submit" disabled={loading} style={{ width: '100%' }}>
+          <button type="submit" disabled={loading} style={{ width: '100%', marginTop: 8, padding: '12px 18px', fontSize: 15 }}>
             {loading ? 'Inloggen…' : 'Inloggen'}
           </button>
         </form>

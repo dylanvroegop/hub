@@ -22,16 +22,22 @@ type MeResponse = {
   };
 };
 
-const nav = [
-  { href: '/dashboard', label: 'Dashboard' },
-  { href: '/inbox', label: 'Inbox' },
-  { href: '/verzoeken', label: 'Verzoeken' },
-  { href: '/incidenten/n8n', label: 'Incidenten n8n' },
-  { href: '/incidenten/data', label: 'Data-issues' },
-  { href: '/social-media-ideeen', label: 'Social ideeën' },
-  { href: '/reddit-klachten', label: 'Reddit klachten' },
-  { href: '/instellingen/integraties', label: 'Integraties' },
-  { href: '/instellingen/team', label: 'Team' },
+const navMain = [
+  { href: '/dashboard', label: 'Dashboard', icon: '◈' },
+  { href: '/inbox', label: 'Inbox', icon: '▣' },
+  { href: '/verzoeken', label: 'Verzoeken', icon: '◉' },
+];
+
+const navOps = [
+  { href: '/incidenten/n8n', label: 'Incidenten n8n', icon: '⚡' },
+  { href: '/incidenten/data', label: 'Data-issues', icon: '⬡' },
+  { href: '/social-media-ideeen', label: 'Social ideeën', icon: '◎' },
+  { href: '/reddit-klachten', label: 'Reddit klachten', icon: '◇' },
+];
+
+const navSettings = [
+  { href: '/instellingen/integraties', label: 'Integraties', icon: '⟡' },
+  { href: '/instellingen/team', label: 'Team', icon: '⊞' },
 ];
 
 export function ProtectedShell({ title, subtitle, children, actions }: ProtectedShellProps) {
@@ -86,23 +92,44 @@ export function ProtectedShell({ title, subtitle, children, actions }: Protected
     );
   }
 
+  const renderNavGroup = (items: typeof navMain) =>
+    items.map((item) => (
+      <Link
+        key={item.href}
+        href={item.href}
+        className={`nav-link ${pathname === item.href || pathname.startsWith(item.href + '/') ? 'active' : ''}`}
+      >
+        <span className="nav-icon">{item.icon}</span>
+        {item.label}
+      </Link>
+    ));
+
   return (
     <div className="app-layout">
       <aside className="sidebar">
-        <h2 className="sidebar-title">Calvora Ops</h2>
-        <p className="sidebar-sub">Infrastructuur cockpit v1</p>
+        <div className="sidebar-brand">
+          <div className="sidebar-logo">C</div>
+          <h2 className="sidebar-title">Calvora Ops</h2>
+        </div>
+        <p className="sidebar-sub">Infrastructure Hub</p>
 
         <nav className="nav-group">
-          {nav.map((item) => (
-            <Link key={item.href} href={item.href} className={`nav-link ${pathname === item.href ? 'active' : ''}`}>
-              {item.label}
-            </Link>
-          ))}
+          {renderNavGroup(navMain)}
         </nav>
 
-        <div style={{ marginTop: 24 }}>
+        <div className="nav-section-label">Operations</div>
+        <nav className="nav-group">
+          {renderNavGroup(navOps)}
+        </nav>
+
+        <div className="nav-section-label">Instellingen</div>
+        <nav className="nav-group">
+          {renderNavGroup(navSettings)}
+        </nav>
+
+        <div className="sidebar-user">
           <small className="muted">Ingelogd als</small>
-          <div style={{ marginTop: 6, marginBottom: 10 }}>{user?.email}</div>
+          <div className="sidebar-user-email">{user?.email}</div>
           <SignOutButton />
         </div>
       </aside>

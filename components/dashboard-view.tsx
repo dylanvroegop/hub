@@ -65,9 +65,9 @@ export function DashboardView() {
     <div className="grid" style={{ gap: 16 }}>
       <div className="grid grid-4">
         {cards.map((card) => (
-          <div key={card.label} className="card kv">
-            <small>{card.label}</small>
-            <strong style={{ fontSize: 24 }}>{card.value}</strong>
+          <div key={card.label} className="card card-glow stat-card kv">
+            <span className="stat-label">{card.label}</span>
+            <span className="stat-value">{card.value}</span>
           </div>
         ))}
       </div>
