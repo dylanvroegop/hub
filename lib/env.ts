@@ -13,7 +13,7 @@ function optional(name: string): string | null {
 }
 
 export function getSupabaseUrl(): string {
-  return required('SUPABASE_URL');
+  return optional('NEXT_PUBLIC_SUPABASE_URL') || required('SUPABASE_URL');
 }
 
 export function getSupabaseServiceRoleKey(): string {
