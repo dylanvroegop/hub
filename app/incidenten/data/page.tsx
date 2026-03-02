@@ -1,6 +1,8 @@
 import { ItemsListView } from '@/components/items-list-view';
 import { ProtectedShell } from '@/components/protected-shell';
 
+export const dynamic = 'force-dynamic';
+
 export default function DataIncidentsPage() {
   return (
     <ProtectedShell title="Incidenten / data" subtitle="Datakwaliteit, sync-mismatches en stuck states">

@@ -1,6 +1,8 @@
 import { ProtectedShell } from '@/components/protected-shell';
 import { RedditKlachtenView } from '@/components/reddit-klachten-view';
 
+export const dynamic = 'force-dynamic';
+
 export default function RedditKlachtenPage() {
   return (
     <ProtectedShell
