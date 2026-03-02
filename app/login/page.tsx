@@ -64,13 +64,13 @@ export default function LoginPage() {
               width: 56,
               height: 56,
               borderRadius: 16,
-              background: 'linear-gradient(135deg, #00e59b, #38bdf8)',
+              background: 'linear-gradient(135deg, #e53e3e, #ff6b6b)',
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
               fontWeight: 900,
               fontSize: 24,
-              color: '#000',
+              color: '#fff',
               marginBottom: 16,
             }}
           >
