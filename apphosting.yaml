@@ -1,0 +1,21 @@
+runConfig:
+  minInstances: 0
+  maxInstances: 3
+  cpu: 1
+  memoryMiB: 512
+
+env:
+  - variable: SUPABASE_URL
+    secret: SUPABASE_URL
+  - variable: SUPABASE_SERVICE_ROLE_KEY
+    secret: SUPABASE_SERVICE_ROLE_KEY
+  - variable: FIREBASE_PROJECT_ID
+    secret: FIREBASE_PROJECT_ID
+  - variable: FIREBASE_CLIENT_EMAIL
+    secret: FIREBASE_CLIENT_EMAIL
+  - variable: FIREBASE_PRIVATE_KEY
+    secret: FIREBASE_PRIVATE_KEY
+  - variable: OPS_ADMIN_EMAILS
+    secret: OPS_ADMIN_EMAILS
+  - variable: N8N_HEADER_SECRET
+    secret: N8N_HEADER_SECRET
