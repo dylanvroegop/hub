@@ -7,3 +7,5 @@ node_modules
 coverage
 .vercel
 **/.vercel
+tsconfig.tsbuildinfo
+*.tsbuildinfo
