@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 
+import { TiltCard } from '@/components/tilt-card';
 import { fetchJson, formatDate } from '@/lib/client-api';
 
 interface MetricsResponse {
@@ -65,10 +66,10 @@ export function DashboardView() {
     <div className="grid" style={{ gap: 16 }}>
       <div className="grid grid-4">
         {cards.map((card) => (
-          <div key={card.label} className="card card-glow stat-card kv">
+          <TiltCard key={card.label} className="card card-glow stat-card kv">
             <span className="stat-label">{card.label}</span>
             <span className="stat-value">{card.value}</span>
-          </div>
+          </TiltCard>
         ))}
       </div>
 

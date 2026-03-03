@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 
 import { SignOutButton } from '@/components/signout-button';
+import { Spotlight } from '@/components/spotlight';
 
 interface ProtectedShellProps {
   title: string;
@@ -135,6 +136,7 @@ export function ProtectedShell({ title, subtitle, children, actions }: Protected
       </aside>
 
       <main className="main-wrap">
+        <Spotlight />
         <div className="page-header">
           <div>
             <h1>{fullTitle}</h1>
