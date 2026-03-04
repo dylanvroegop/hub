@@ -64,7 +64,7 @@ export default function LoginPage() {
               width: 56,
               height: 56,
               borderRadius: 16,
-              background: 'linear-gradient(135deg, #e53e3e, #ff6b6b)',
+              background: '#dc2626',
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
